@@ -311,3 +311,32 @@ body::-webkit-scrollbar-thumb:hover {
     padding-bottom: 30px;
 }
 
+@media (orientation: portrait) {
+    .container {
+        position: flex;
+        top: 20px;
+        left: 58%;
+        transform: translateX(-50%);
+        width: 300px;
+    }
+    .image-container {
+        top: 60%; /* Shift the image lower vertically */
+        left: 58%; /* Ensure it's centered horizontally */
+        transform: translate(-50%, -50%);
+    }
+    #expression-image {
+        width: 250px;
+        height: 250px;
+    }
+    .talk-bubble {
+        margin-top: 160%;
+        margin-left: 17%;
+    }
+    .talk-bubble-arrow {
+        display: none;
+    }
+    #user-input {
+        font-size: 16px;
+    }
+}
+
