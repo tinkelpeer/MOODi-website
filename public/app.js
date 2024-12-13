@@ -104,18 +104,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const talkBubbleArrow = talkBubble.querySelector(".talk-bubble-arrow");
     if (!talkBubbleArrow) return;
 
+    const isMobile = window.innerWidth <= 768;
+
     talkBubble.style.visibility = 'hidden';
     talkBubble.style.display = 'block';
 
-    const bubbleRect = talkBubble.getBoundingClientRect();
-    let bubbleTop = arrowFixedTop - (bubbleRect.height / 2);
-    bubbleTop = Math.max(bubbleTop, minBubbleTop);
-    talkBubble.style.top = `${bubbleTop}px`;
-
-    const arrowTopInsideBubble = arrowFixedTop - bubbleTop;
-    talkBubbleArrow.style.top = `${arrowTopInsideBubble}px`;
-    talkBubbleArrow.style.transform = "translateY(-50%)";
-
+    if (isMobile) {
+      // On mobile, simplify positioning 
+      talkBubble.style.top = 'auto';
+      talkBubble.style.bottom = 'auto';
+      talkBubble.style.left = 'auto';
+    } else {
+      const bubbleRect = talkBubble.getBoundingClientRect();
+      let bubbleTop = arrowFixedTop - (bubbleRect.height / 2);
+      bubbleTop = Math.max(bubbleTop, minBubbleTop);
+      talkBubble.style.top = `${bubbleTop}px`;
+      
+      const arrowTopInsideBubble = arrowFixedTop - bubbleTop;
+      talkBubbleArrow.style.top = `${arrowTopInsideBubble}px`;
+      talkBubbleArrow.style.transform = "translateY(-50%)";
+    }
+  
     talkBubble.style.visibility = 'visible';
   }
 
