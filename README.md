@@ -10,8 +10,6 @@ MOODi is an interactive companion designed to convey 25 distinct emotions, dynam
 * [Running the App](#running-the-app)
 * [Project Structure](#project-structure)
 * [Dependencies](#dependencies)
-* [Contributing](#contributing)
-* [License](#license)
 
 ## Prerequisites
 
